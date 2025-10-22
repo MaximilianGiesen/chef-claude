@@ -8,9 +8,7 @@ export default function Form() {
     ))
 
 
-    function addIngredient(e) {
-        e.preventDefault()
-        const formData = new FormData(e.currentTarget)
+    function addIngredient(formData) {
         const newIngredient = formData.get("ingredient")
 
         setIngredients(prevIngredients => [
@@ -20,7 +18,7 @@ export default function Form() {
 
     return (
         <main>
-            <form onSubmit={addIngredient} className="add-ingredient-form">
+            <form action={addIngredient} className="add-ingredient-form">
                 <input
                     type="text"
                     placeholder="e.g. oregano"
