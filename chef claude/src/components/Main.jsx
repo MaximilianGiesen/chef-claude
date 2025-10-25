@@ -27,14 +27,14 @@ export default function Main() {
             { ingredients.length > 0 ? <section>
                 <h2>Ingredients on hand:</h2>
                 <ul className="ingredients-list" aria-live="polite">{ingredientsListItems}</ul>
-                <div className="get-recipe-container">
+                {ingredients.length > 3 ? <div className="get-recipe-container">
                     <div>
                         <h3>Ready for a recipe?</h3>
                         <p>Generate a recipe from your list of ingredients.</p>
                     </div>
                     <button>Get a recipe</button>
-                </div>
-            </section> : <h3>Add ingredients and lets see what Claude can do!</h3> }
+                </div> : <p>Add at least 4 ingredients and see Claude´s magic!</p>}
+            </section> : null }
         </main>
     )
 }
