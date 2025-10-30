@@ -2,7 +2,7 @@ import React from "react";
 
 export default function IngredientsList(props) {
 
-    const ingredientsListItems = ingredients.map(ingredient => (
+    const ingredientsListItems = props.ingredients.map(ingredient => (
         <li key={ingredient}>{ingredient}</li>
     ))
 
@@ -10,12 +10,12 @@ export default function IngredientsList(props) {
         <section>
             <h2>Ingredients on hand:</h2>
             <ul className="ingredients-list" aria-live="polite">{ingredientsListItems}</ul>
-            {props.length > 3 ? <div className="get-recipe-container">
+            {props.ingredients.length > 3 ? <div className="get-recipe-container">
                 <div>
                     <h3>Ready for a recipe?</h3>
                     <p>Generate a recipe from your list of ingredients.</p>
                 </div>
-                <button onClick={getARecipe}>Get a recipe</button>
+                <button onClick={props.getARecipe}>Get a recipe</button>
             </div> : <p>Add at least 4 ingredients and see Claude´s magic!</p>}
         </section>
     )

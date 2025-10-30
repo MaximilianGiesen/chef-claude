@@ -32,7 +32,6 @@ export default function Main() {
             </form>
             { ingredients.length > 0 ? <IngredientsList
                 ingredients={ingredients}
-                ingredientsListItems={ingredientsListItems}
                 getARecipe={getARecipe}
             />: <p>Type in your first component!</p> }
             {isShown &&
