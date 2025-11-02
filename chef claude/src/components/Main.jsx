@@ -23,6 +23,12 @@ export default function Main() {
         setIsShown(prevVal => !prevVal)
     }
 
+    React.useEffect(() => {
+        if(aiRecipe !== '' && recipeSection.current !== null) {
+            recipeSection.current.scrollIntoView()
+        }
+    }, [aiRecipe])
+
     return (
         <main>
             <form action={addIngredient} className="add-ingredient-form">
