@@ -15,6 +15,8 @@ export default function Main() {
     const [isShown, setIsShown] = React.useState(false)
 
     const [aiRecipe, setAiRecipe] = React.useState('')
+    const recipeSection = React.useRef(null)
+
 
     const getRecipe = async () => {
         setAiRecipe(await getRecipeFromMistral(ingredients))
@@ -35,6 +37,7 @@ export default function Main() {
             { ingredients.length > 0 ? <IngredientsList
                 ingredients={ingredients}
                 getRecipe={getRecipe}
+                ref={recipeSection}
             />: <p>Type in your first component!</p> }
             {isShown &&
                 <ClaudeRecipe
