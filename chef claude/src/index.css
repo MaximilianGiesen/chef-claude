@@ -8,6 +8,7 @@ body {
     background-color: #FAFAF8;
 }
 
+
 header {
     display: flex;
     justify-content: center;
@@ -16,6 +17,11 @@ header {
     height: 80px;
     background-color: white;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+}
+
+main {
+    max-width: 960px;
+    margin: auto;
 }
 
 header > img {
